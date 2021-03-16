@@ -23,5 +23,15 @@
 </head>
 <body>
     <h1>Meet.jobs pixel test</h1>
+    <div>
+        <button onclick="PixelTextEvent">Send Pixel Test Event</button>
+    </div>
+    <script>
+        const PixelTextEvent = (e) => {
+            alert("send a test event to fb pixel")
+            fbq('trackCustom', 'pixelTest', {tag:'testTag',value: 99});
+        }
+
+    </script>
 </body>
 </html>
