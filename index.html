@@ -127,6 +127,7 @@ fbq(
             },
             mounted(){
                this.iOSversion()
+               this.sendTokenPageView()
             },
             computed:{
               sendingData(){
@@ -166,6 +167,32 @@ fbq(
                         d = {status:false, version: false, info:''}
                     }
                     this.ios = d;
+                },
+                sendTokenPageView(){
+                    const data = {
+                        "event_name": "Contact",
+                        "data":[
+                            {
+                                "event_name": "PageView",
+                                "event_time": Math.floor(Date.now() / 1000),
+                                "action_source":"website",
+                                "event_source_url": document.URL,
+                                "user_data" : {
+                                    "em": "309a0a5c3e211326ae75ca18196d301a9bdbd1a882a4d2569511033da23f0abd",
+                                    "client_user_agent":this.userAgent,
+                                }
+                            }
+                        ]
+                    }
+                    axios.post(this.apiUrl,data).then(
+                        (response)=>{
+                            console.log(response)
+                        }
+                    ).catch(
+                        (error)=>{
+                            console.log(error)
+                        }
+                    )
                 },
                 sendTestTokenEvent(){
                     const data = testData
