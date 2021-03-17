@@ -90,15 +90,19 @@ fbq(
         </div>
     </div>
 
+
     <script>
+
+
         const apiVersion = "10.0";
         const pixelId = "193335492200923";
         const accessToken = 'EAARV76nVmpkBABHEruscJZAEBxdUPrlJ9tzgYYb2HpoI4SV4rhX8zpWOPszOdZAIazUTKhHguOFWwG2OwWnhnkojBUtFerH1fV6gRkPyOYLLqBWnLZBiJzu468ye4z9pO2teTjGRke5KushtrHYZC9Nzngne1llcZCz7IOJZAVZAkudp7pgVmPnTNS4YXxPZCAcZD';
         const apiUrl = `https://graph.facebook.com/v${apiVersion}/${pixelId}/events?access_token=${accessToken}`;
         const testData = {
+            "test_event_code" : "TEST35538",
             "data": [
                 {
-                    "event_name": "Purchase",
+                    "event_name": "Token Test",
                     "event_time": 1615886108,
                     "user_data": {
                         "em": "7b17fb0bd173f625b58636fb796407c22b3d16fc78302d79f0fd30c2fc2fc068",
